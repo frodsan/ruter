@@ -1,4 +1,4 @@
-Ruter [![Build Status](https://travis-ci.org/frodsan/ruter.svg)](https://travis-ci.org/frodsan/ruter)
+Ruter [![Build Status](https://app.travis-ci.com/frodsan/ruter.svg?branch=main)](https://app.travis-ci.com/frodsan/ruter)
 ====
 
 "You must buy a ticket before entering the bus" - The Inspector 🕵🏻‍♂️
