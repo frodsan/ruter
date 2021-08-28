@@ -19,7 +19,7 @@ class Ruter
       #   end
       #
       #   Users.define do
-      #     on(:id) do |id|
+      #     on("/users") do
       #       get do
       #         res.write("GET /users")
       #       end
