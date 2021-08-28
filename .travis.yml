@@ -4,5 +4,5 @@ sudo: false
 rvm:
   - 3.0
 script:
-  - rake test
-  - standardrb
+  - bin/rake test
+  - bin/standardrb
