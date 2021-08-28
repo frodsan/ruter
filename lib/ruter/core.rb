@@ -1,13 +1,15 @@
 require "rack"
 require "syro"
+require_relative "core/request"
+require_relative "core/response"
 
 class Ruter
+  # Include Syro's API directly instead of using the plugin
+  # system to be able to override any of its methods.
+  include Syro::Deck::API
+
   # Internal: Handles Syro integration.
   module Core
-    def self.setup(app) # :nodoc:
-      app.include(Syro::Deck::API)
-    end
-
     module ClassMethods
       # Public: Sets the application handler.
       #
@@ -62,7 +64,7 @@ class Ruter
 
     module InstanceMethods
       def request_class # :nodoc:
-        Ruter::Request
+        Ruter::Core::Request
       end
 
       def response_class # :nodoc:

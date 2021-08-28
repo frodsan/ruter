@@ -72,4 +72,20 @@ class CoreTest < Minitest::Test
     assert_equal 200, app.res.status
     assert_equal "42", app.res.body
   end
+
+  test "use own request and response classes" do
+    Ruter.define do
+      get do
+        res.write(request_class.name)
+        res.write(response_class.name)
+      end
+    end
+
+    app = Ruter::Test.new
+    app.get("/")
+
+    assert_equal 200, app.res.status
+    assert_match Ruter::Core::Request.name, app.res.body
+    assert_match Ruter::Core::Response.name, app.res.body
+  end
 end
