@@ -32,16 +32,16 @@ class SettingsTest < MiniTest::Test
     Ruter.set(:foo, "foo")
     Ruter.set(:bar, "bar")
 
-    Inherited = Class.new(Ruter)
-    Inherited.set(:bar, "rab")
-    Inherited.set(:baz, "baz")
+    inherited = Class.new(Ruter)
+    inherited.set(:bar, "rab")
+    inherited.set(:baz, "baz")
 
     assert_equal "foo", Ruter.settings[:foo]
     assert_equal "bar", Ruter.settings[:bar]
     assert_nil Ruter.settings[:baz]
 
-    assert_equal "foo", Inherited.settings[:foo]
-    assert_equal "rab", Inherited.settings[:bar]
-    assert_equal "baz", Inherited.settings[:baz]
+    assert_equal "foo", inherited.settings[:foo]
+    assert_equal "rab", inherited.settings[:bar]
+    assert_equal "baz", inherited.settings[:baz]
   end
 end

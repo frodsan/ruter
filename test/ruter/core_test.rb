@@ -51,10 +51,9 @@ class CoreTest < Minitest::Test
   end
 
   test "composition" do
-    class Foo < Ruter
-    end
+    nested = Class.new(Ruter)
 
-    Foo.define do
+    nested.define do
       get do
         res.write(inbox[:foo])
       end
@@ -62,7 +61,7 @@ class CoreTest < Minitest::Test
 
     Ruter.define do
       on "foo" do
-        run(Foo, foo: 42)
+        run(nested, foo: 42)
       end
     end
 
