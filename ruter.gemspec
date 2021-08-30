@@ -1,26 +1,27 @@
 require_relative "lib/ruter/version"
 
-Gem::Specification.new do |s|
-  s.name = "ruter"
-  s.version = Ruter::VERSION
-  s.summary = "Another Rack based web framework 🤷🏽‍♂️"
-  s.description = s.summary
-  s.author = "Francesco Rodriguez"
-  s.email = "frodsan@me.com"
-  s.homepage = "https://github.com/frodsan/ruter"
-  s.license = "MIT"
+Gem::Specification.new do |spec|
+  spec.name = "ruter"
+  spec.version = Ruter::VERSION
+  spec.authors = ["Francesco Rodriguez"]
+  spec.email = "frodsan@me.com"
 
-  s.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
-  s.executables = s.files.grep(%r{^exe/}).map { |f| File.basename(f) }
-  s.test_files = s.files.grep(%r{^(test|spec|features)/})
-  s.require_paths = ["lib"]
+  spec.summary = "Another Rack based web framework 🤷🏽‍♂️"
+  spec.description = spec.summary
+  spec.homepage = "https://github.com/frodsan/ruter"
+  spec.license = "MIT"
 
-  s.add_dependency "rack", "~> 2.0"
-  s.add_dependency "syro", "~> 3.2"
-  s.add_dependency "tilt", "~> 2.0"
-  s.add_dependency "erubi", "~> 1.10"
-  s.add_development_dependency "minitest", "~> 5.8"
-  s.add_development_dependency "minitest-sugar", "~> 2.1"
-  s.add_development_dependency "rake", "~> 13.0"
-  s.add_development_dependency "standard", "~> 1.2"
+  spec.metadata["homepage_uri"] = spec.homepage
+  spec.metadata["source_code_uri"] = spec.homepage
+  spec.metadata["changelog_uri"] = spec.homepage
+
+  spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
+  spec.executables = spec.files.grep(%r{^exe/}).map { |f| File.basename(f) }
+  spec.test_files = spec.files.grep(%r{^(test|spec|features)/})
+  spec.require_paths = ["lib"]
+
+  spec.add_dependency "rack", "~> 2.0"
+  spec.add_dependency "syro", "~> 3.2"
+  spec.add_dependency "tilt", "~> 2.0"
+  spec.add_dependency "erubi", "~> 1.10"
 end
