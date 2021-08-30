@@ -10,8 +10,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/frodsan/ruter"
   s.license = "MIT"
 
-  s.files = Dir["LICENSE", "README.md", "lib/**/*.rb"]
-  s.test_files = Dir["test/**/*.rb"]
+  s.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
+  s.executables = gem.files.grep(%r{^exe/}).map { |f| File.basename(f) }
+  s.test_files = gem.files.grep(%r{^(test|spec|features)/})
+  s.require_paths = ["lib"]
 
   s.add_dependency "rack", "~> 2.0"
   s.add_dependency "syro", "~> 3.2"
