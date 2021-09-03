@@ -6,7 +6,7 @@ Ruter [![Build Status](https://app.travis-ci.com/frodsan/ruter.svg?branch=main)]
 Description
 -----------
 
-Ruter is yet another [Rack][rack] based framework, made for fun and ~~profit~~, and built on top of [Syro][syro].
+Ruter is yet another [Rack][rack] based framework, made just for fun, and built on top of [Syro][syro].
 
 Usage
 -----

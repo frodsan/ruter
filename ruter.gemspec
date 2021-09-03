@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Francesco Rodriguez"]
   spec.email = "frodsan@me.com"
 
-  spec.summary = "Another Rack based web framework 🤷🏽‍♂️"
-  spec.description = spec.summary
+  spec.summary = "Ruter routes your HTTP requests 🚌"
+  spec.description = "Rack based web framework built on top of Syro"
   spec.homepage = "https://github.com/frodsan/ruter"
   spec.license = "MIT"
 
@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = spec.homepage
   spec.metadata["changelog_uri"] = spec.homepage
 
-  spec.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
+  spec.files = `git ls-files`.split("\n")
   spec.executables = spec.files.grep(%r{^exe/}).map { |f| File.basename(f) }
   spec.test_files = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
